@@ -9,12 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
         menu.classList.toggle('active');
     });
     
-    // Fechar menu ao clicar em um link
+      // Fechar menu ao clicar em um link
     const menuLinks = document.querySelectorAll('.menu a');
     menuLinks.forEach(link => {
         link.addEventListener('click', function() {
             mobileMenu.setAttribute('aria-expanded', 'false');
             menu.classList.remove('active');
+            document.body.style.overflow = 'auto';
         });
     });
     
