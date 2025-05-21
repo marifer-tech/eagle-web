@@ -88,3 +88,40 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Executa uma vez ao carregar a página
 });
+
+// ========== MODAL ==========
+function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
+// Fecha o modal clicando fora dele
+window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+};
+
+
+// ========== MENU MOBILE ==========
+const mobileMenu = document.querySelector('.mobile-menu');
+const menu = document.getElementById('menu');
+
+mobileMenu.addEventListener('click', () => {
+    const isOpen = mobileMenu.getAttribute('aria-expanded') === 'true';
+    mobileMenu.setAttribute('aria-expanded', !isOpen);
+    menu.classList.toggle('active');
+});
+
+
+// ========== HEADER SCROLL ==========
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    header.classList.toggle('scrolled', window.scrollY > 50);
+});
