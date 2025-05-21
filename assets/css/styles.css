@@ -89,6 +89,18 @@ ul {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
+.btn-view {
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+}
+
+.btn-view:hover {
+    background-color: var(--text-light);
+    color: var(--dark);
+}
 
 .btn-submit {
     background-color: var(--primary);
