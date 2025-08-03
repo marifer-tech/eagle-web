@@ -3,228 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="EAGLEWEB - Criação de websites modernos, landing pages, sites institucionais, portfólios e blogs profissionais. Desenvolvido por Mariana Fernanda da Silva.">
-    <title>EAGLEWEB - Websites Modernos e Responsivos</title>
+    <meta name="description" content="EAGLEWEB - Websites de alto impacto que impulsionam seu negócio digital">
+    <title>EAGLEWEB | Websites Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="header">
-    <div class="container">
-        <nav class="nav">
-            <a href="#" class="logo">EAGLE<span>WEB</span></a>
-            <button class="mobile-menu" aria-label="Abrir menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
-            <ul class="menu" id="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Serviços</a></li>
-                <li><a href="#portfolio">Portfólio</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-        </nav>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="eagle-logo">
+            <div class="wing left"></div>
+            <div class="body"></div>
+            <div class="wing right"></div>
+        </div>
     </div>
-</header>
 
-<main>
+    <!-- Cursor Personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo" data-text="EAGLEWEB">EAGLEWEB</a>
+                <div class="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link hover-underline">Home</a></li>
+                    <li><a href="#services" class="nav-link hover-underline">Serviços</a></li>
+                    <li><a href="#portfolio" class="nav-link hover-underline">Portfólio</a></li>
+                    <li><a href="#about" class="nav-link hover-underline">Sobre</a></li>
+                    <li><a href="#contact" class="nav-link hover-underline">Contato</a></li>
+                    <li><a href="https://wa.me/5565998024674" class="nav-cta" target="_blank">Orçamento <i class="fab fa-whatsapp"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
     <section id="home" class="hero">
+        <canvas id="particles-js"></canvas>
         <div class="container">
             <div class="hero-content">
-                <h1>Websites modernos e 100% responsivos</h1>
-                <p>Sua presença online com design profissional, performance rápida e otimização SEO.</p>
-                <a href="https://wa.me/5565998024674" class="btn-wpp" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Fale conosco
-                </a>
+                <h1 class="text-reveal">Websites que <span class="text-gradient">voam alto</span></h1>
+                <p class="subtitle">Criamos experiências digitais memoráveis que convertem visitantes em clientes</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary btn-animate">Ver Portfólio</a>
+                    <a href="#contact" class="btn btn-secondary btn-animate">Fale Conosco</a>
+                </div>
+                <div class="scroll-down">
+                    <span>Scroll Down</span>
+                    <div class="arrow"></div>
+                </div>
             </div>
             <div class="hero-image">
-                <img src="assets/images/logo.png" alt="Ilustração de desenvolvimento web" loading="lazy">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
+                <img src="assets/images/logo.png" alt="Ilustração de website moderno" class="parallax-img" data-speed="0.1">
             </div>
         </div>
     </section>
 
+    <!-- Clients Logo Section -->
+    <section class="clients">
+        <div class="container">
+            <div class="marquee">
+                <div class="marquee-content">
+                    <span>Parceiros e Clientes</span>
+                    <img src="assets/images/clients/client1.svg" alt="Logo cliente">
+                    <img src="assets/images/clients/client2.svg" alt="Logo cliente">
+                    <img src="assets/images/clients/client3.svg" alt="Logo cliente">
+                    <img src="assets/images/clients/client4.svg" alt="Logo cliente">
+                    <img src="assets/images/clients/client5.svg" alt="Logo cliente">
+                    <span>Parceiros e Clientes</span>
+                    <img src="assets/images/clients/client1.svg" alt="Logo cliente">
+                    <img src="assets/images/clients/client2.svg" alt="Logo cliente">
+                    <img src="assets/images/clients/client3.svg" alt="Logo cliente">
+                    <img src="assets/images/clients/client4.svg" alt="Logo cliente">
+                    <img src="assets/images/clients/client5.svg" alt="Logo cliente">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="section-header">
+                <span class="section-subtitle">O que oferecemos</span>
+                <h2 class="section-title">Nossos <span class="text-gradient">Serviços</span></h2>
+            </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-laptop-code"></i>
+                <div class="service-card" data-tilt>
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                        <div class="icon-bg"></div>
+                    </div>
                     <h3>Landing Pages</h3>
-                    <p>Páginas de conversão otimizadas para capturar leads e aumentar suas vendas.</p>
+                    <p>Conversões maximizadas com design persuasivo e alta performance</p>
+                    <ul class="service-features">
+                        <li>Taxa de conversão +50%</li>
+                        <li>Carregamento ultrarrápido</li>
+                        <li>Testes A/B integrados</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Solicitar <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-building"></i>
+                
+                <div class="service-card" data-tilt>
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                        <div class="icon-bg"></div>
+                    </div>
                     <h3>Sites Institucionais</h3>
-                    <p>Presença online profissional para sua empresa com informações claras e design moderno.</p>
+                    <p>Presença digital profissional que inspira confiança</p>
+                    <ul class="service-features">
+                        <li>Design exclusivo</li>
+                        <li>100% responsivo</li>
+                        <li>Integração com redes sociais</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Solicitar <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="service-card">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Portfólios</h3>
-                    <p>Mostre seu trabalho da melhor forma para atrair mais clientes e oportunidades.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-blog"></i>
-                    <h3>Blogs Profissionais</h3>
-                    <p>Estruture seu blog com SEO integrado para aumentar sua autoridade online.</p>
+                
+                <div class="service-card" data-tilt>
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3>Portfólios Criativos</h3>
+                    <p>Mostre seu trabalho do jeito que ele merece</p>
+                    <ul class="service-features">
+                        <li>Galeria interativa</li>
+                        <li>Animções personalizadas</li>
+                        <li>SEO otimizado</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Solicitar <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">Portfólio</h2>
+            <div class="section-header">
+                <span class="section-subtitle">Nossos trabalhos</span>
+                <h2 class="section-title">Portfólio <span class="text-gradient">Selecionado</span></h2>
+            </div>
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="landing">Landing Pages</button>
+                <button class="filter-btn" data-filter="institucional">Sites Institucionais</button>
+                <button class="filter-btn" data-filter="portfolio">Portfólios</button>
+            </div>
             <div class="portfolio-grid">
-
                 <!-- Projeto 1 -->
-                <div class="portfolio-item">
-                    <img src="assets/images/projetos/projeto1.jpg" alt="Projeto 1" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Projeto 1</h3>
-                        <a href="http://mgpersonalizados.netlify.app/" class="btn-view" target="_blank">Acessar</a><br>
-                        <button class="btn-view" onclick="openModal('modal1')">Ver Detalhes</button>
+                <div class="portfolio-item" data-category="landing" data-tilt>
+                    <div class="portfolio-img">
+                        <img src="assets/images/projetos/projeto1.jpg" alt="Projeto MG Personalizados">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>MG Personalizados</h3>
+                                <p>Landing Page para loja de produtos personalizados</p>
+                                <div class="portfolio-btns">
+                                    <a href="http://mgpersonalizados.netlify.app/" class="btn-view" target="_blank">Ver Online</a>
+                                    <button class="btn-details" onclick="openModal('modal1')">Detalhes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
+                
                 <!-- Projeto 2 -->
-                <div class="portfolio-item">
-                    <img src="assets/images/projetos/projeto2.jpg" alt="Projeto 2" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Projeto 2</h3>
-                        <a href="https://ecotrilhas.netlify.app/" class="btn-view" target="_blank">Acessar</a><br>
-                        <button class="btn-view" onclick="openModal('modal2')">Ver Detalhes</button>
+                <div class="portfolio-item" data-category="institucional" data-tilt>
+                    <div class="portfolio-img">
+                        <img src="assets/images/projetos/projeto2.jpg" alt="Projeto Eco Trilhas">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Eco Trilhas</h3>
+                                <p>Site institucional para agência de ecoturismo</p>
+                                <div class="portfolio-btns">
+                                    <a href="https://ecotrilhas.netlify.app/" class="btn-view" target="_blank">Ver Online</a>
+                                    <button class="btn-details" onclick="openModal('modal2')">Detalhes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Projeto 3 -->
-                <div class="portfolio-item">
-                    <img src="assets/images/projetos/projeto3.png" alt="Projeto 3" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Projeto 3</h3>
-                        <a href="https://adv-renata-gomes.netlify.app/" class="btn-view" target="_blank">Acessar</a><br>
-                        <button class="btn-view" onclick="openModal('modal3')">Ver Detalhes</button>
+                  <!-- Projeto 2 -->
+                <div class="portfolio-item" data-category="institucional" data-tilt>
+                    <div class="portfolio-img">
+                        <img src="assets/images/projetos/projeto3.png" alt="Projeto Eco Trilhas">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Eco Trilhas</h3>
+                                <p>Site institucional para agência de ecoturismo</p>
+                                <div class="portfolio-btns">
+                                    <a href="https://ecotrilhas.netlify.app/" class="btn-view" target="_blank">Ver Online</a>
+                                    <button class="btn-details" onclick="openModal('modal2')">Detalhes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Projeto 4 -->
-                <div class="portfolio-item">
-                    <img src="assets/images/projetos/projeto4.jpg" alt="Projeto 4" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Projeto 4</h3>
-                        <a href="https://cartao-adv.onrender.com/" class="btn-view" target="_blank">Acessar</a><br>
-                        <button class="btn-view" onclick="openModal('modal4')">Ver Detalhes</button>
+                    <!-- Projeto 2 -->
+                <div class="portfolio-item" data-category="institucional" data-tilt>
+                    <div class="portfolio-img">
+                        <img src="assets/images/projetos/projeto4.jpg" alt="Projeto Eco Trilhas">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Eco Trilhas</h3>
+                                <p>Site institucional para agência de ecoturismo</p>
+                                <div class="portfolio-btns">
+                                    <a href="https://ecotrilhas.netlify.app/" class="btn-view" target="_blank">Ver Online</a>
+                                    <button class="btn-details" onclick="openModal('modal2')">Detalhes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Projeto 5 -->
-                <div class="portfolio-item">
-                    <img src="assets/images/projetos/projeto5.png" alt="Projeto 5" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <h3>Projeto 5</h3>
-                        <a href="https://preparae.onrender.com/" class="btn-view" target="_blank">Acessar</a><br>
-                        <button class="btn-view" onclick="openModal('modal5')">Ver Detalhes</button>
+
+                 <!-- Projeto 2 -->
+                <div class="portfolio-item" data-category="institucional" data-tilt>
+                    <div class="portfolio-img">
+                        <img src="assets/images/projetos/projeto5.png" alt="Projeto Eco Trilhas">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Eco Trilhas</h3>
+                                <p>Site institucional para agência de ecoturismo</p>
+                                <div class="portfolio-btns">
+                                    <a href="https://ecotrilhas.netlify.app/" class="btn-view" target="_blank">Ver Online</a>
+                                    <button class="btn-details" onclick="openModal('modal2')">Detalhes</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Projeto 6-->
-                 <div class="portfolio-item">
-                <img src="assets/images/projetos/projeto6.png">
-                <div class="portfolio-overlay">
-                    <h3>Projeto 6</h3>
-                    <a href="https://projetolunaar.netlify.app/" class="btn-view" target="_blank">Acessar</a><br>
-                    <button class="btn-view" onclick="openModal('modal6')">Ver Detalhes</button>
-                </div>    
+                 <!-- Projeto 2 -->
+                <div class="portfolio-item" data-category="institucional" data-tilt>
+                    <div class="portfolio-img">
+                        <img src="assets/images/projetos/projeto6.png" alt="Projeto Eco Trilhas">
+                        <div class="portfolio-overlay">
+                            <div class="overlay-content">
+                                <h3>Eco Trilhas</h3>
+                                <p>Site institucional para agência de ecoturismo</p>
+                                <div class="portfolio-btns">
+                                    <a href="https://ecotrilhas.netlify.app/" class="btn-view" target="_blank">Ver Online</a>
+                                    <button class="btn-details" onclick="openModal('modal2')">Detalhes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
+                
             </div>
         </div>
     </section>
 
-    <!-- Modais -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal('modal1')">&times;</span>
-            <h2>MG Personalizados</h2>
-            <p>Site desenvolvido para loja de personalizados. Foco em apresentação de catálogo e contato via WhatsApp, com design responsivo e otimizado.</p>
-        </div>
-    </div>
-
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal('modal2')">&times;</span>
-            <h2>Eco Trilhas</h2>
-            <p>Site institucional para agência de ecoturismo, apresentando roteiros, imagens das trilhas e formulário de agendamento.</p>
-        </div>
-    </div>
-
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal('modal3')">&times;</span>
-            <h2>Advogada Renata Gomes</h2>
-            <p>Site profissional para advogada, com informações de serviços, áreas de atuação, formulário de contato e design sofisticado.</p>
-        </div>
-    </div>
-
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal('modal4')">&times;</span>
-            <h2>Cartão de Visita Digital</h2>
-            <p>Cartão de visita digital desenvolvido para advogados, com navegação simples, dados profissionais e integração com WhatsApp e redes sociais.</p>
-        </div>
-    </div>
-
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal('modal5')">&times;</span>
-            <h2>Preparaê</h2>
-            <p>Plataforma de estudos online voltada para concursos públicos, com foco em cronograma, materiais, simulados e organização de estudos.</p>
-        </div>
-    </div>
-
-    <div id="modal6" class="modal">
-        <div class="modal-content">
-            <span class="close-button" onclick="closeModal('modal6')">&times;</span>
-            <h2>Projeto Lunaar</h2>
-            <p>Plataforma em formato de cartilha de adoção de animais para instruir futuros adotantes responsáveis.</p>
-        </div>
-    </div>
-
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <a href="#" class="logo">EAGLE<span>WEB</span></a>
-                <p>Websites modernos e responsivos</p>
-            </div>
-            <div class="footer-links">
-                <h3>Links rápidos</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </div>
-            <div class="footer-cta">
-                <h3>Pronto para começar?</h3>
-                <a href="https://wa.me/5565998024674" class="btn-wpp" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Fale conosco
-                </a>
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="6">0</div>
+                    <div class="stat-title">Projetos Entregues</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="6">0</div>
+                    <div class="stat-title">Clientes Satisfeitos</div>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 EAGLEWEB. Todos os direitos reservados.</p>
-            <p>Desenvolvido por Mariana Fernanda da Silva</p>
-        </div>
-    </div>
-</footer>
+    </section>
 
-<script src="assets/js/script.js"></script>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="section-header">
+                    <span class="section-subtitle">Nossa história</span>
+                    <h2 class="section-title">Sobre a <span class="text-gradient">EAGLEWEB</span></h2>
+                </div>
+                <p>Fundada por Mariana Fernanda, a EAGLEWEB nasceu da paixão por criar experiências digitais que realmente fazem a diferença. Nosso nome representa a visão de águia - enxergamos além do óbvio para entregar soluções únicas.</p>
+                <p>Com uma equipe de especialistas em design, desenvolvimento e marketing digital, transformamos ideias em realidade digital com excelência técnica e criatividade sem limites.</p>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-medal"></i>
+                        <h4>Qualidade Premium</h4>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Performance</h4>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-heart"></i>
+                        <h4>Paixão pelo código</h4>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary btn-animate">Conheça nosso processo</a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Feedback dos clientes</span>
+                <h2 class="section-title">Depoimentos <span class="text-gradient">Inspiradores</span></h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"A EAGLEWEB transformou completamente nossa presença online. Nosso site agora converte 3x mais do que antes!"</p>
+                        <div class="client-info">
+                            <img src="assets/images/clients/client1.jpg" alt="Foto do cliente">
+                            <div>
+                                <h4>Roberto Silva</h4>
+                                <span>CEO - MG Personalizados</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais depoimentos -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="section-header">
+                    <span class="section-subtitle">Vamos conversar</span>
+                    <h2 class="section-title">Entre em <span class="text-gradient">Contato</span></h2>
+                </div>
+                <p>Pronto para elevar seu negócio digital? Preencha o formulário ou nos chame no WhatsApp para um atendimento rápido.</p>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <a href="tel:+5565998024674">(65) 99802-4674</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:contato@eagleweb.com.br">contato@eagleweb.com.br</a>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Localização</h4>
+                            <span>Cuiabá, MT - Brasil</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Seu Nome</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Seu Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone">
+                        <label for="phone">Telefone (opcional)</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected></option>
+                            <option value="landing">Landing Page</option>
+                            <option value="institucional">Site Institucional</option>
+                            <option value="portfolio">Portfólio</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <label for="service">Serviço Desejado</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <label for="message">Sua Mensagem</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-animate">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="logo" data-text="EAGLEWEB">EAGLEWEB</a>
+                    <p>Criando experiências digitais excepcionais que impulsionam negócios e marcas.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Serviços</a></li>
+                        <li><a href="#portfolio">Portfólio</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="#">Landing Pages</a></li>
+                        <li><a href="#">Sites Institucionais</a></li>
+                        <li><a href="#">Portfólios</a></li>
+                        <li><a href="#">Blogs Profissionais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Assine para receber dicas e novidades</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Seu melhor email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EAGLEWEB. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <i class="fas fa-heart"></i> por Mariana Fernanda</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
