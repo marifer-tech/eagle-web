@@ -163,6 +163,8 @@ button.btn, button.btn-primary, button.btn-secondary {
     z-index: 1000;
     padding: 2rem 0;
     transition: var(--transition);
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header .container {
@@ -179,10 +181,24 @@ button.btn, button.btn-primary, button.btn-secondary {
     box-shadow: var(--shadow);
 }
 
+.header.scrolled .nav-link {
+    color: var(--lighter); /* deixa o texto claro */
+}
+
+.header.scrolled .hover-underline::after {
+    background: var(--gradient); /* mantém o efeito */
+}
+
+.header.scrolled .nav-cta {
+    background: var(--gradient);
+    color: var(--lighter);
+}
+
+
 .logo {
     font-size: 2.4rem;
     font-weight: 900;
-    color: var(--lighter);
+    color: var(--dark);
     text-decoration: none;
     position: relative;
 }
@@ -209,15 +225,17 @@ button.btn, button.btn-primary, button.btn-secondary {
 }
 
 .nav-menu {
+    list-style: none;
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
+    margin-left: 25rem; /* aumenta o afastamento */
 }
 
 .nav-link {
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--lighter);
+    color: var(--dark);
     text-decoration: none;
     position: relative;
     transition: var(--transition);
@@ -266,7 +284,7 @@ button.btn, button.btn-primary, button.btn-secondary {
 .bar {
     width: 100%;
     height: 3px;
-    background-color: var(--lighter);
+    background-color: var(--dark);
     transition: var(--transition);
 }
 
@@ -282,43 +300,36 @@ button.btn, button.btn-primary, button.btn-secondary {
     transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Hero Section - Ajustes principais */
+/* Hero Section – alinhamento corrigido */
 .hero {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
+    display: grid;
+    place-items: center;
     position: relative;
     overflow: hidden;
     background-color: var(--darker);
     color: var(--lighter);
+    padding-top: 80px; /* espaço para o header fixo */
 }
 
+/* Duas colunas estáveis: texto (1.1fr) | imagem (0.9fr) */
 .hero .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;              /* centraliza verticalmente texto e imagem */
     justify-content: space-between;
     gap: 5rem;
-    position: relative;
-    z-index: 2;
     width: 100%;
+    max-width: 1200px;
+    z-index: 2;
 }
 
+/* Coluna do texto */
 .hero-content {
-    flex: 1;
-    min-width: 50%;
+    /* ocupa a coluna 1 */
+    grid-column: 1;
     padding-right: 2rem;
     text-align: left;
-}
-
-.hero-image {
-    flex: 1;
-    min-width: 40%;
-    position: relative;
-    perspective: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .hero-content h1 {
@@ -341,6 +352,46 @@ button.btn, button.btn-primary, button.btn-secondary {
     flex-wrap: wrap;
 }
 
+/* Coluna da imagem */
+.hero-image {
+    /* ocupa a coluna 2 */
+    grid-column: 2;
+    position: relative;
+    perspective: 1000px;
+    display: flex;
+    align-items: center;              /* alinha a imagem ao centro da coluna */
+    justify-content: center;
+    /* evita que a coluna “puxe” mais altura que o texto */
+    height: 100%;
+}
+
+/* Imagem estável (sem deslocar pela rotação) */
+.hero-image img {
+    display: block;
+    max-width: 80%;                   /* ajuste fino de tamanho */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transform-style: preserve-3d;
+    transform: rotateY(-6deg) rotateX(3deg);
+    transition: var(--transition);
+    /* remove qualquer margem/resíduo que cause desalinhamento */
+    margin: 0;
+}
+
+/* Efeito “endireitar” ao hover sem pular layout */
+.hero-image:hover img {
+    transform: rotateY(0) rotateX(0);
+}
+
+/* Shapes/fundo da hero (se estiver usando) */
+.floating-shapes {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+/* “Scroll down” */
 .scroll-down {
     display: flex;
     align-items: center;
@@ -352,28 +403,41 @@ button.btn, button.btn-primary, button.btn-secondary {
     transition: var(--transition);
 }
 
-.floating-shapes {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -1;
+/* Responsivo: empilha e centraliza */
+@media (max-width: 992px) {
+    .hero .container {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .hero-content {
+        text-align: center;
+        padding-right: 0;
+    }
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-image {
+        grid-column: auto;
+    }
+    .hero-image img {
+        max-width: 60%;               /* menor para telas médias */
+    }
 }
 
-.hero-image img {
-    max-width: 50%;
-    height: auto;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    transform-style: preserve-3d;
-    transform: rotateY(-10deg) rotateX(5deg);
-    transition: var(--transition);
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 4rem;
+    }
+    .hero-image img {
+        max-width: 75%;               /* um pouco maior para celulares */
+    }
 }
 
-.hero-image:hover img {
-    transform: rotateY(0) rotateX(0);
-}
+
 
 /* Clients Section */
 .clients {
@@ -803,53 +867,6 @@ button.btn, button.btn-primary, button.btn-secondary {
     font-size: 1.6rem;
 }
 
-.about-image {
-    position: relative;
-}
-
-.image-wrapper {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-}
-
-.image-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.experience-badge {
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    background: var(--gradient);
-    color: var(--lighter);
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    box-shadow: var(--shadow);
-    z-index: 2;
-}
-
-.experience-badge span {
-    font-size: 3rem;
-    line-height: 1;
-}
-
-.experience-badge small {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.8;
-}
-
 /* Testimonials Section */
 .testimonials {
     background-color: var(--lighter);
@@ -923,17 +940,26 @@ button.btn, button.btn-primary, button.btn-secondary {
     opacity: 0.7;
 }
 
-/* Contact Section */
+/* ==== CONTACT CENTRALIZADO (sem formulário) ==== */
 .contact {
     background-color: var(--darker);
     color: var(--lighter);
 }
 
 .contact .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5rem;
-    align-items: center;
+    /* de grid 2 colunas -> coluna única centralizada */
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centraliza horizontal */
+    justify-content: center;  /* centraliza vertical se a seção crescer */
+    gap: 4rem;
+    text-align: center;       /* centraliza textos */
+    max-width: 1000px;        /* respira melhor numa largura confortável */
+}
+
+.contact-content {
+    max-width: 780px;         /* limita largura do texto */
+    margin: 0 auto;
 }
 
 .contact-content p {
@@ -943,26 +969,17 @@ button.btn, button.btn-primary, button.btn-secondary {
 }
 
 .contact-info {
-    margin-bottom: 4rem;
+    width: 100%;
+    max-width: 780px;         /* mesma largura do texto pra alinhar */
+    margin: 0 auto 2rem auto;
 }
 
 .info-item {
     display: flex;
     align-items: center;
+    justify-content: center;  /* ícone + textos centralizados */
     gap: 2rem;
     margin-bottom: 2rem;
-}
-
-.info-item i {
-    font-size: 2rem;
-    color: var(--primary);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(108, 99, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .info-item h4 {
@@ -970,22 +987,31 @@ button.btn, button.btn-primary, button.btn-secondary {
     margin-bottom: 0.5rem;
 }
 
-.info-item a, .info-item span {
+.info-item a, 
+.info-item span {
     font-size: 1.4rem;
-    opacity: 0.8;
-    transition: var(--transition);
+    opacity: 0.85;
     text-decoration: none;
     color: var(--lighter);
 }
 
-.info-item a:hover {
-    color: var(--primary);
-    opacity: 1;
+/* Remova o bloco do formulário, se quiser, ou deixe-o sem impacto */
+.contact-form { display: none; }
+
+/* Responsivo (fica praticamente igual, só garantimos centralização) */
+@media (max-width: 576px) {
+    .contact .container,
+    .contact-content,
+    .contact-info {
+        max-width: 92%;
+    }
 }
+
 
 .social-links {
     display: flex;
     gap: 1.5rem;
+    text-decoration: none;
 }
 
 .social-links a {
@@ -999,6 +1025,7 @@ button.btn, button.btn-primary, button.btn-secondary {
     font-size: 1.6rem;
     color: var(--lighter);
     transition: var(--transition);
+    text-decoration: none;
 }
 
 .social-links a:hover {
@@ -1187,6 +1214,7 @@ button.btn, button.btn-primary, button.btn-secondary {
 
 /* Back to Top */
 .back-to-top {
+        text-decoration: none; /* remove sublinhado */
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -1213,80 +1241,6 @@ button.btn, button.btn-primary, button.btn-secondary {
 
 .back-to-top:hover {
     transform: translateY(-5px);
-}
-
-/* Preloader */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--darker);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease;
-}
-
-.preloader.fade-out {
-    opacity: 0;
-}
-
-.eagle-logo {
-    position: relative;
-    width: 100px;
-    height: 100px;
-}
-
-.wing {
-    position: absolute;
-    width: 40px;
-    height: 80px;
-    background: var(--gradient);
-    border-radius: 50px;
-}
-
-.wing.left {
-    left: 0;
-    transform-origin: right center;
-    animation: flapLeft 1.5s ease-in-out infinite;
-}
-
-.wing.right {
-    right: 0;
-    transform-origin: left center;
-    animation: flapRight 1.5s ease-in-out infinite;
-}
-
-.body {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    background: var(--gradient);
-    border-radius: 50%;
-}
-
-@keyframes flapLeft {
-    0%, 100% {
-        transform: rotate(-30deg);
-    }
-    50% {
-        transform: rotate(30deg);
-    }
-}
-
-@keyframes flapRight {
-    0%, 100% {
-        transform: rotate(30deg);
-    }
-    50% {
-        transform: rotate(-30deg);
-    }
 }
 
 /* Cursor Personalizado */
@@ -1375,6 +1329,7 @@ button.btn, button.btn-primary, button.btn-secondary {
         gap: 3rem;
         transition: var(--transition);
         z-index: 1000;
+        margin-left: 0; /* garante que o off-canvas não herde o deslocamento */
     }
     
     .nav-menu.active {
@@ -1383,6 +1338,7 @@ button.btn, button.btn-primary, button.btn-secondary {
     
     .nav-link {
         font-size: 2rem;
+        color: var(--lighter);
     }
     
     .nav-cta {
